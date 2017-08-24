@@ -1,0 +1,17 @@
+language: python
+
+python: 
+    - 3.6
+
+env:
+    - DJANGO_VERSION=1.11.4
+
+install: 
+    - pip install -q Django==$DJANGO_VERSION
+    - pip install -r requirements.txt
+
+before_script:
+    - python3 manage.py makemigrations
+    - python3 manage.py migrate
+
+script: pytest
