@@ -1,7 +1,6 @@
-version: 1
 machine:
   python:
-    version: 3.6
+    version: 3.6.2
 dependencies:
   pre:
     - pip install -q Django==1.11.4
