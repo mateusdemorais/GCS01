@@ -14,4 +14,11 @@ before_script:
     - python3 manage.py makemigrations
     - python3 manage.py migrate
 
-script: pytest
+script:
+    - python3 manage.py test
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: 8eb6e3ce051d89d6271da2fe029170ee1831855b
+  app: gcs01-mateusdemorais-travis
