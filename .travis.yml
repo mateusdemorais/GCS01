@@ -1,24 +1,18 @@
 language: python
-
-python: 
-    - 3.6
-
+python:
+- 3.6
 env:
-    - DJANGO_VERSION=1.11.4
-
-install: 
-    - pip install -q Django==$DJANGO_VERSION
-    - pip install -r requirements.txt
-
+- DJANGO_VERSION=1.11.4
+install:
+- pip install -q Django==$DJANGO_VERSION
+- pip install -r requirements.txt
 before_script:
-    - python3 manage.py makemigrations
-    - python3 manage.py migrate
-
+- python3 manage.py makemigrations
+- python3 manage.py migrate
 script:
-    - python3 manage.py test
-
+- python3 manage.py test
 deploy:
   provider: heroku
   api_key:
-    secure: 8eb6e3ce051d89d6271da2fe029170ee1831855b
+    secure: bJ66vc7ot3NTF3fZmWeeaY4W8FklNGoAN/ruAmrjsr0vFXy1d6vexwFf+RyybRddp1D9nZHQWu+jQszyL5/K4VPeap+PAWH/j811y+g5V6oF+xNZ3D8F5YeQbuYYC/BbEH62qX+gHtopmmz3KnUdJxS1hQWRwf5LP1TiVZVAan23Jf3IuGNfYwx0jPaFe8NKDIzSd2WMfa83Rk0eKBhK3Zs+By4nz/s5F8hpPyRfEN76Z1jFZ0M15VniAAbVuIF7SAAC37OWbkfmhPxJUTNYMqmz4+zsWLEONoUGw5WYzgniSz47VMEFLZM34H+kBwywqxHo/ARS7pJf3Wo+3hKHRCrp3ODCxMpvBDWimV3oJJGeevOw8p6Rf879nZqBIF8krE+19Ty7dH6n9NOrIH6UTolzIFDViZjWJrN06fAd5rWgI/HwDhLXyDt2PtTpO9S5yHqU60WxybB9W2MufALDF5VA/AsA+f8gaaWPVv4hbxL+Pa/76rdt0iJ9gLBBTqg6Xv4VfLsBthg7r8Su7X31rTjrSs3JAjrDLQ+RkFSofEgmWXxLmjQkoakzjT7PNAlVUIhiQUAQ7w7bNpN8W98YPULYL7ZHRAkijhls58MJlJYlL5SZVOSy3EOM4EH4gG0l0DhKvemzVFewxz6LuMCiZbJqS92R/02TgOcyygPJAGY=
   app: gcs01-mateusdemorais-travis
